@@ -8,6 +8,7 @@ import {
   FaLayerGroup,
   FaBars,
   FaTimes,
+  FaFileAlt,
 } from "react-icons/fa";
 
 export default function ContentLayout({ children }) {
@@ -46,6 +47,10 @@ export default function ContentLayout({ children }) {
           </div>
 
           <nav className="sidebar-nav">
+            <Link href="/syllabus" onClick={() => setOpen(false)}>
+              <FaFileAlt />
+              Syllabus
+            </Link>
             <Link href="/getting-started" onClick={() => setOpen(false)}>
               <FaBookOpen />
               Getting Started
