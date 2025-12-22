@@ -1,71 +1,117 @@
-"use client";
-
-import { useState } from "react";
+import Link from "next/link";
 
 export default function SyllabusPage() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
   return (
-    <div className="syllabus-wrapper">
+    <article className="mx-auto max-w-4xl space-y-10">
+      <header className="border-b border-slate-200 pb-6">
+        <nav
+          aria-label="Breadcrumb"
+          className="mb-3 flex items-center text-xs text-slate-500 sm:text-sm"
+        >
+          <Link
+            href="/"
+            className="transition hover:text-indigo-700 hover:underline"
+          >
+            Home
+          </Link>
+          <span className="mx-1">›</span>
+          <span className="font-medium text-slate-700">Syllabus</span>
+        </nav>
 
-      {/* Main content */}
-      <>
-        <article className="syllabus-page">
-          <h1 className="page-title">Advanced Programming with Java - Syllabus</h1>
+        <h1 className="text-3xl font-semibold tracking-tight text-slate-900">
+          Advanced Programming with Java - Syllabus
+        </h1>
+      </header>
 
-          {/* Course Info */}
-          <section id="course-info" className="course-section">
-            <h2>Course Information</h2>
-            <table className="course-table">
-              <tbody>
-                <tr><td>Course Title</td><td>Advanced Programming with Java</td></tr>
-                <tr><td>Full Marks</td><td>100</td></tr>
-                <tr><td>Pass Marks</td><td>45</td></tr>
-                <tr><td>Nature of Course</td><td>Theory/Tutorial/Practical</td></tr>
-                <tr><td>Time per Period</td><td>1 hour</td></tr>
-                <tr><td>Total Periods</td><td>45</td></tr>
-                <tr><td>Level</td><td>Undergraduate</td></tr>
-                <tr><td>Program</td><td>BE Computer/IT/Software</td></tr>
-              </tbody>
-            </table>
-          </section>
+      {/* Course Info */}
+      <section id="course-info" className="space-y-3">
+        <h2 className="border-l-4 border-amber-400 pl-3 text-xl font-semibold text-indigo-900">
+          Course Information
+        </h2>
+        <table className="w-full border-collapse text-sm text-slate-700">
+          <tbody>
+            <tr className="border-b border-slate-200">
+              <td className="w-1/3 py-2 pr-3 font-medium text-slate-600">
+                Course Title
+              </td>
+              <td className="py-2 text-slate-800">Advanced Programming with Java</td>
+            </tr>
+            <tr className="border-b border-slate-200">
+              <td className="py-2 pr-3 font-medium text-slate-600">Full Marks</td>
+              <td className="py-2 text-slate-800">100</td>
+            </tr>
+            <tr className="border-b border-slate-200">
+              <td className="py-2 pr-3 font-medium text-slate-600">Pass Marks</td>
+              <td className="py-2 text-slate-800">45</td>
+            </tr>
+            <tr className="border-b border-slate-200">
+              <td className="py-2 pr-3 font-medium text-slate-600">Nature of Course</td>
+              <td className="py-2 text-slate-800">Theory/Tutorial/Practical</td>
+            </tr>
+            <tr className="border-b border-slate-200">
+              <td className="py-2 pr-3 font-medium text-slate-600">Time per Period</td>
+              <td className="py-2 text-slate-800">1 hour</td>
+            </tr>
+            <tr className="border-b border-slate-200">
+              <td className="py-2 pr-3 font-medium text-slate-600">Total Periods</td>
+              <td className="py-2 text-slate-800">45</td>
+            </tr>
+            <tr className="border-b border-slate-200">
+              <td className="py-2 pr-3 font-medium text-slate-600">Level</td>
+              <td className="py-2 text-slate-800">Undergraduate</td>
+            </tr>
+            <tr>
+              <td className="py-2 pr-3 font-medium text-slate-600">Program</td>
+              <td className="py-2 text-slate-800">BE Computer/IT/Software</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
 
-          {/* Description */}
-          <section id="description" className="course-section">
-            <h2>Course Description</h2>
-            <p>
-              This course provides in-depth knowledge of advanced Java programming, including Java architecture,
-              object-oriented principles, GUI development, networking, database integration, web development, and advanced topics like ORM, Hibernate, and concurrency.
-              Students will be equipped to build robust Java applications for diverse professional challenges.
-            </p>
-          </section>
+      {/* Description */}
+      <section id="description" className="space-y-3">
+        <h2 className="border-l-4 border-amber-400 pl-3 text-xl font-semibold text-indigo-900">
+          Course Description
+        </h2>
+        <p className="text-slate-700">
+          This course provides in-depth knowledge of advanced Java programming, including Java architecture,
+          object-oriented principles, GUI development, networking, database integration, web development, and advanced topics like ORM, Hibernate, and concurrency.
+          Students will be equipped to build robust Java applications for diverse professional challenges.
+        </p>
+      </section>
 
-          {/* Objectives */}
-          <section id="objectives" className="course-section">
-            <h2>General Objectives</h2>
-            <ol>
-              <li>Understand Java fundamentals, architecture, data types, and control structures.</li>
-              <li>Master object-oriented principles: inheritance, polymorphism, abstraction.</li>
-              <li>Develop GUI applications using Swing, AWT, and JavaFX.</li>
-              <li>Learn networking, socket programming, URL handling, and email integration.</li>
-              <li>Gain knowledge in database connectivity with JDBC and SQL operations.</li>
-              <li>Create dynamic web applications using Servlets and JSP.</li>
-              <li>Explore advanced topics: ORM, Hibernate, Spring Boot, concurrency, and design patterns.</li>
-            </ol>
-          </section>
+      {/* Objectives */}
+      <section id="objectives" className="space-y-3">
+        <h2 className="border-l-4 border-amber-400 pl-3 text-xl font-semibold text-indigo-900">
+          General Objectives
+        </h2>
+        <ol className="ml-6 list-decimal space-y-1.5 text-slate-700">
+          <li>Understand Java fundamentals, architecture, data types, and control structures.</li>
+          <li>Master object-oriented principles: inheritance, polymorphism, abstraction.</li>
+          <li>Develop GUI applications using Swing, AWT, and JavaFX.</li>
+          <li>Learn networking, socket programming, URL handling, and email integration.</li>
+          <li>Gain knowledge in database connectivity with JDBC and SQL operations.</li>
+          <li>Create dynamic web applications using Servlets and JSP.</li>
+          <li>Explore advanced topics: ORM, Hibernate, Spring Boot, concurrency, and design patterns.</li>
+        </ol>
+      </section>
 
-          {/* Instruction Methods */}
-          <section id="instruction" className="course-section">
-            <h2>Methods of Instruction</h2>
-            <p>
-              The course uses lectures, practical classes, tutorials, group discussions, presentations, quizzes, and project work to ensure a balance of theory and hands-on learning.
-            </p>
-          </section>
+      {/* Instruction Methods */}
+      <section id="instruction" className="space-y-3">
+        <h2 className="border-l-4 border-amber-400 pl-3 text-xl font-semibold text-indigo-900">
+          Methods of Instruction
+        </h2>
+        <p className="text-slate-700">
+          The course uses lectures, practical classes, tutorials, group discussions, presentations, quizzes, and project work to ensure a balance of theory and hands-on learning.
+        </p>
+      </section>
 
-          {/* Detailed Content */}
-          <section id="content" className="course-section">
-            <h2>Course Contents</h2>
-            {[
+      {/* Detailed Content */}
+      <section id="content" className="space-y-3">
+        <h2 className="border-l-4 border-amber-400 pl-3 text-xl font-semibold text-indigo-900">
+          Course Contents
+        </h2>
+        {[
               {
                 title: "Unit 1: Basics of Programming in Java (7 hrs)",
                 points: [
@@ -151,22 +197,29 @@ export default function SyllabusPage() {
                 ]
               }
             ].map((unit, idx) => (
-              <div key={idx} className="unit-card">
-                <h3>{unit.title}</h3>
-                <ul>
-                  {unit.points.map((p, i) => (
-                    <li key={i}>{p}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </section>
+          <div
+            key={idx}
+            className="border-l-4 border-indigo-700 bg-white px-4 py-3 shadow-sm"
+          >
+            <h3 className="text-sm font-semibold text-slate-900 md:text-base">
+              {unit.title}
+            </h3>
+            <ul className="mt-2 ml-5 list-disc space-y-1 text-sm text-slate-700">
+              {unit.points.map((p, i) => (
+                <li key={i}>{p}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </section>
 
-          {/* Tutorials */}
-          <section id="tutorials" className="course-section">
-            <h2>Tutorials</h2>
-            <ul className="syllabus-list">
-              {[
+      {/* Tutorials */}
+      <section id="tutorials" className="space-y-3">
+        <h2 className="border-l-4 border-amber-400 pl-3 text-xl font-semibold text-indigo-900">
+          Tutorials
+        </h2>
+        <ul className="ml-6 list-decimal space-y-1.5 text-slate-700">
+          {[
                 "Setting Up Java Development Environment",
                 "Creating Your First Java Program",
                 "Working with Classes and Objects",
@@ -186,15 +239,19 @@ export default function SyllabusPage() {
                 "JSP Essentials",
                 "Concurrency and Multithreading",
                 "Design Patterns"
-              ].map((t, idx) => <li key={idx}>{t}</li>)}
-            </ul>
-          </section>
+              ].map((t, idx) => (
+            <li key={idx}>{t}</li>
+          ))}
+        </ul>
+      </section>
 
-          {/* Practical */}
-          <section id="practical" className="course-section">
-            <h2>Practical Work</h2>
-            <ul className="syllabus-list">
-              {[
+      {/* Practical */}
+      <section id="practical" className="space-y-3">
+        <h2 className="border-l-4 border-amber-400 pl-3 text-xl font-semibold text-indigo-900">
+          Practical Work
+        </h2>
+        <ul className="ml-6 list-decimal space-y-1.5 text-slate-700">
+          {[
                 "Basic Java Application",
                 "Object-Oriented Programming",
                 "GUI Application with Swing",
@@ -205,168 +262,55 @@ export default function SyllabusPage() {
                 "Concurrency Demonstration",
                 "Hibernate Integration",
                 "Spring Boot Project"
-              ].map((p, idx) => <li key={idx}>{p}</li>)}
-            </ul>
-          </section>
+              ].map((p, idx) => (
+            <li key={idx}>{p}</li>
+          ))}
+        </ul>
+      </section>
 
-          {/* Evaluation */}
-          <section id="evaluation" className="course-section">
-            <h2>Evaluation & Responsibilities</h2>
-            <p>
-              Internal evaluation includes quizzes, assignments, lab reports, projects, class participation, and presentations.
-              Students must secure at least 45% marks and 80% attendance to appear in final exams.
-            </p>
-          </section>
+      {/* Evaluation */}
+      <section id="evaluation" className="space-y-3">
+        <h2 className="border-l-4 border-amber-400 pl-3 text-xl font-semibold text-indigo-900">
+          Evaluation & Responsibilities
+        </h2>
+        <p className="text-slate-700">
+          Internal evaluation includes quizzes, assignments, lab reports, projects, class participation, and presentations.
+          Students must secure at least 45% marks and 80% attendance to appear in final exams.
+        </p>
+      </section>
 
-          {/* References */}
-          <section id="references" className="course-section">
-            <h2>References</h2>
-            <ul className="syllabus-list">
-              <li>Dietel H.M and Dietel P.J., Java: How to Program, Third Edition, Pearson Education Asia</li>
-              <li>Naughton, Java 2: The Complete Reference, Tata McGraw Hill</li>
-              <li>Balagurusamy E., Programming in Java: 2nd Edition, Tata McGraw Hill</li>
-            </ul>
-          </section>
-        </article>
-      </>
+      {/* References */}
+      <section id="references" className="space-y-3">
+        <h2 className="border-l-4 border-amber-400 pl-3 text-xl font-semibold text-indigo-900">
+          References
+        </h2>
+        <ul className="ml-6 list-decimal space-y-1.5 text-slate-700">
+          <li>
+            Dietel H.M and Dietel P.J., Java: How to Program, Third Edition, Pearson
+            Education Asia
+          </li>
+          <li>Naughton, Java 2: The Complete Reference, Tata McGraw Hill</li>
+          <li>Balagurusamy E., Programming in Java: 2nd Edition, Tata McGraw Hill</li>
+        </ul>
+      </section>
 
-      <style jsx>{`
-        .syllabus-wrapper {
-          display: flex;
-          position: relative;
-        }
-
-        .sidebar-toggle {
-          display: none;
-          position: fixed;
-          top: 1rem;
-          left: 1rem;
-          z-index: 1000;
-          background: #1a3c8b;
-          color: #fff;
-          border: none;
-          padding: 0.5rem 1rem;
-          border-radius: 4px;
-        }
-
-        .syllabus-sidebar {
-          width: 250px;
-          position: sticky;
-          top: 1rem;
-          height: calc(100vh - 2rem);
-          overflow-y: auto;
-          padding: 1rem;
-          background: #f0f4f8;
-          border-right: 1px solid #ddd;
-        }
-
-        .syllabus-sidebar h3 {
-          margin-bottom: 1rem;
-        }
-
-        .syllabus-sidebar ul {
-          list-style: none;
-          padding-left: 0;
-        }
-
-        .syllabus-sidebar li {
-          margin: 0.5rem 0;
-        }
-
-        .syllabus-sidebar a {
-          text-decoration: none;
-          color: #1a3c8b;
-        }
-
-        .syllabus-page {
-          flex: 1;
-          max-width: 900px;
-          margin: 0 auto;
-          padding: 2rem 1rem;
-        }
-
-        .page-title {
-          font-size: 2rem;
-          color: #1a3c8b;
-          margin-bottom: 2rem;
-        }
-
-        .course-table {
-          width: 100%;
-          border-collapse: collapse;
-        }
-
-        .course-table td {
-          padding: 0.5rem 0.8rem;
-          border-bottom: 1px solid #ddd;
-        }
-
-        .course-section {
-          margin-bottom: 2rem;
-        }
-
-        .course-section h2 {
-          font-size: 1.4rem;
-          color: #1a3c8b;
-          margin-bottom: 1rem;
-          border-left: 4px solid #ffb300;
-          padding-left: 0.5rem;
-        }
-
-        .unit-card {
-          background: #fff;
-          border-left: 4px solid #1a3c8b;
-          padding: 1rem 1.2rem;
-          margin: 1rem 0;
-          border-radius: 4px;
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-        }
-
-        .unit-card h3 {
-          font-size: 1.1rem;
-          margin-bottom: 0.5rem;
-        }
-
-        .unit-card ul {
-          margin-left: 1.2rem;
-          list-style-type: disc;
-        }
-
-        .syllabus-list {
-          margin-left: 1.2rem;
-          list-style-type: decimal;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-          .syllabus-wrapper {
-            flex-direction: column;
-          }
-
-          .syllabus-sidebar {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            height: 100%;
-            width: 70%;
-            z-index: 999;
-            transition: left 0.3s ease-in-out;
-            box-shadow: 2px 0 8px rgba(0,0,0,0.2);
-          }
-
-          .syllabus-sidebar.open {
-            left: 0;
-          }
-
-          .sidebar-toggle {
-            display: block;
-          }
-
-          .syllabus-page {
-            padding: 2rem 1rem;
-          }
-        }
-      `}</style>
-    </div>
+      {/* Navigation */}
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 border border-indigo-100 bg-indigo-50 px-4 py-2 text-sm font-medium text-indigo-900 shadow-sm"
+        >
+          <span className="text-lg">←</span>
+          <span>Previous: Home</span>
+        </Link>
+        <Link
+          href="/getting-started"
+          className="inline-flex items-center gap-2 bg-[#1a3c8b] px-4 py-2 text-sm font-medium text-white shadow-md"
+        >
+          <span>Next: Getting Started</span>
+          <span className="text-lg">→</span>
+        </Link>
+      </div>
+    </article>
   );
 }
