@@ -202,10 +202,10 @@ export default function SetupInstallationPage() {
           <span>Previous: Getting Started</span>
         </Link>
         <Link
-          href="/first-program"
+          href="/chapter-01"
           className="inline-flex items-center gap-2 bg-[#1a3c8b] px-4 py-2 text-sm font-medium text-white shadow-md"
         >
-          <span>Next: First Java Program</span>
+          <span>Next: Chapter 01 Overview</span>
           <span className="text-lg">→</span>
         </Link>
       </div>

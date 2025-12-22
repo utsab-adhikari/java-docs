@@ -21,8 +21,30 @@ const navItems = [
     label: "Setup & Installation",
     icon: FaDownload,
   },
-  { href: "#", label: "Java Fundamentals", icon: FaLayerGroup },
-  { href: "#", label: "OOP Concepts", icon: FaCode },
+];
+
+const chapterNav = [
+  {
+    title: "1. Chapter 01: Basics of Java",
+    items: [
+      { href: "/chapter-01", label: "Overview" },
+      { href: "/chapter-01/first-program", label: "1.1 First Program" },
+      { href: "/chapter-01/architecture", label: "1.2 Architecture" },
+      { href: "/chapter-01/class-paths", label: "1.3 Class Paths" },
+      { href: "/chapter-01/class-object", label: "1.4 Class & Object" },
+      { href: "/chapter-01/constructor", label: "1.5 Constructor" },
+    ],
+  },
+  {
+    title: "2. Chapter 02: OOP in Java",
+    items: [
+      { href: "/chapter-02", label: "Overview" },
+      { href: "/chapter-02/principles", label: "2.1 Principles" },
+      { href: "/chapter-02/super-sub-class", label: "2.2 Super class & Sub class" },
+      { href: "/chapter-02/inheritance-types", label: "2.3 Inheritance Types" },
+      { href: "/chapter-02/overriding-overloading", label: "2.4 Overriding / Overloading" },
+    ],
+  },
 ];
 
 export default function ContentLayout({ children }) {
@@ -64,7 +86,8 @@ export default function ContentLayout({ children }) {
               </button>
             </div>
 
-            <nav className="flex flex-1 flex-col gap-1 overflow-y-auto">
+            <nav className="flex flex-1 flex-col gap-1 overflow-y-auto text-sm">
+              {/* Top-level pages */}
               {navItems.map(({ href, label, icon: Icon }) => {
                 const isActive = href !== "#" && pathname === href;
                 return (
@@ -72,7 +95,7 @@ export default function ContentLayout({ children }) {
                     key={href + label}
                     href={href}
                     onClick={() => setOpen(false)}
-                    className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+                    className={`flex items-center gap-2 rounded-md px-3 py-2 font-medium transition-colors ${
                       isActive
                         ? "bg-white/10 text-white"
                         : "text-slate-100/80 hover:bg-white/10 hover:text-white"
@@ -83,6 +106,32 @@ export default function ContentLayout({ children }) {
                   </Link>
                 );
               })}
+
+              {/* Chapters */}
+              <div className="mt-4 border-t border-white/10 pt-3 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-indigo-100/80">
+                Chapters
+              </div>
+              <div className="mt-1 space-y-2">
+                {chapterNav.map((chapter) => (
+                  <div key={chapter.title} className="text-xs">
+                    <p className="px-3 py-1 text-[0.7rem] font-semibold text-indigo-100/90">
+                      {chapter.title}
+                    </p>
+                    <div className="mt-0.5 space-y-0.5">
+                      {chapter.items.map((item) => (
+                        <Link
+                          key={chapter.title + item.label}
+                          href={item.href}
+                          onClick={() => setOpen(false)}
+                          className="block truncate px-5 py-1 text-[0.7rem] text-slate-100/80 hover:bg-white/10 hover:text-white"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </nav>
 
             <footer className="mt-4 border-t border-white/10 pt-3 text-xs text-slate-200/80">
@@ -103,24 +152,52 @@ export default function ContentLayout({ children }) {
             </p>
           </div>
 
-          <nav className="flex-1 space-y-1 overflow-y-auto pr-1 text-sm">
-            {navItems.map(({ href, label, icon: Icon }) => {
-              const isActive = href !== "#" && pathname === href;
-              return (
-                <Link
-                  key={href + label}
-                  href={href}
-                  className={`flex items-center gap-2 rounded-md px-3 py-2 font-medium transition-colors ${
-                    isActive
-                      ? "bg-white/10 text-white"
-                      : "text-slate-100/80 hover:bg-white/10 hover:text-white"
-                  }`}
-                >
-                  <Icon className="h-4 w-4" />
-                  <span>{label}</span>
-                </Link>
-              );
-            })}
+          <nav className="flex-1 space-y-3 overflow-y-auto pr-1 text-sm">
+            {/* Top-level pages */}
+            <div className="space-y-1">
+              {navItems.map(({ href, label, icon: Icon }) => {
+                const isActive = href !== "#" && pathname === href;
+                return (
+                  <Link
+                    key={href + label}
+                    href={href}
+                    className={`flex items-center gap-2 rounded-md px-3 py-2 font-medium transition-colors ${
+                      isActive
+                        ? "bg-white/10 text-white"
+                        : "text-slate-100/80 hover:bg-white/10 hover:text-white"
+                    }`}
+                  >
+                    <Icon className="h-4 w-4" />
+                    <span>{label}</span>
+                  </Link>
+                );
+              })}
+            </div>
+
+            {/* Chapters */}
+            <div className="border-t border-white/10 pt-3 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-indigo-100/80">
+              Chapters
+            </div>
+            <div className="space-y-2 text-xs">
+              {chapterNav.map((chapter) => (
+                <div key={chapter.title}>
+                  <p className="px-3 py-1 text-[0.72rem] font-semibold text-indigo-100/90">
+                    {chapter.title}
+                  </p>
+                  <div className="mt-0.5 space-y-0.5">
+                    {chapter.items.map((item) => (
+                      <Link
+                        key={chapter.title + item.label}
+                        href={item.href}
+                        className="block truncate px-5 py-1 text-[0.7rem] text-slate-100/80 hover:bg-white/10 hover:text-white"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </nav>
 
           <footer className="mt-4 border-t border-white/10 pt-3 text-xs text-slate-200/80">
