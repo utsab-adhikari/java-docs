@@ -6,6 +6,7 @@ import {
   FaGlobe,
   FaEnvelope,
   FaArrowRight,
+  FaJava,
 } from "react-icons/fa";
 
 export default function HomePage() {
@@ -26,6 +27,10 @@ export default function HomePage() {
             <p className="cover-edition">
               Based on Pokhara University Syllabus
             </p>
+          </div>
+
+          <div className="cover-logo flex items-center justify-center mt-5">
+          <FaJava size={50} className="cover-java-icon text-red-600" />
           </div>
 
           <div className="cover-author">
