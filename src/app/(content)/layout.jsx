@@ -11,6 +11,10 @@ import {
   FaTimes,
   FaFileAlt,
   FaDownload,
+  FaQuestionCircle,
+  FaFlask,
+  FaChevronDown,
+  FaChevronRight,
 } from "react-icons/fa";
 
 const navItems = [
@@ -21,6 +25,11 @@ const navItems = [
     label: "Setup & Installation",
     icon: FaDownload,
   },
+];
+
+const supportNav = [
+  { href: "/questions", label: "Questions", icon: FaQuestionCircle },
+  { href: "/lab-questions", label: "Lab Questions", icon: FaFlask },
 ];
 
 const chapterNav = [
@@ -49,7 +58,21 @@ const chapterNav = [
 
 export default function ContentLayout({ children }) {
   const [open, setOpen] = useState(false);
+  const [openChapters, setOpenChapters] = useState(() => {
+    const initialState = {};
+    chapterNav.forEach((chapter) => {
+      initialState[chapter.title] = true;
+    });
+    return initialState;
+  });
   const pathname = usePathname();
+
+  const toggleChapter = (title) => {
+    setOpenChapters((prev) => ({
+      ...prev,
+      [title]: !prev[title],
+    }));
+  };
 
   return (
     <div className="min-h-screen bg-[#f4f1ea]">
@@ -86,7 +109,7 @@ export default function ContentLayout({ children }) {
               </button>
             </div>
 
-            <nav className="flex flex-1 flex-col gap-1 overflow-y-auto text-sm">
+            <nav className="custom-scrollbar flex flex-1 flex-col gap-1 overflow-y-auto text-sm">
               {/* Top-level pages */}
               {navItems.map(({ href, label, icon: Icon }) => {
                 const isActive = href !== "#" && pathname === href;
@@ -112,25 +135,71 @@ export default function ContentLayout({ children }) {
                 Chapters
               </div>
               <div className="mt-1 space-y-2">
-                {chapterNav.map((chapter) => (
-                  <div key={chapter.title} className="text-xs">
-                    <p className="px-3 py-1 text-[0.7rem] font-semibold text-indigo-100/90">
-                      {chapter.title}
-                    </p>
-                    <div className="mt-0.5 space-y-0.5">
-                      {chapter.items.map((item) => (
-                        <Link
-                          key={chapter.title + item.label}
-                          href={item.href}
-                          onClick={() => setOpen(false)}
-                          className="block truncate px-5 py-1 text-[0.7rem] text-slate-100/80 hover:bg-white/10 hover:text-white"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
+                {chapterNav.map((chapter) => {
+                  const isOpen = openChapters[chapter.title];
+                  return (
+                    <div key={chapter.title} className="text-xs">
+                      <button
+                        type="button"
+                        onClick={() => toggleChapter(chapter.title)}
+                        className="flex w-full items-center justify-between px-3 py-1 text-left text-[0.7rem] font-semibold text-indigo-100/90 hover:bg-white/10"
+                      >
+                        <span>{chapter.title}</span>
+                        {isOpen ? (
+                          <FaChevronDown className="h-3 w-3" />
+                        ) : (
+                          <FaChevronRight className="h-3 w-3" />
+                        )}
+                      </button>
+                      {isOpen && (
+                        <div className="mt-0.5 space-y-0.5">
+                          {chapter.items.map((item) => {
+                            const isActive = pathname === item.href;
+                            return (
+                              <Link
+                                key={chapter.title + item.label}
+                                href={item.href}
+                                onClick={() => setOpen(false)}
+                                className={`block truncate px-5 py-1 text-[0.7rem] transition-colors ${
+                                  isActive
+                                    ? "bg-white/10 text-white"
+                                    : "text-slate-100/80 hover:bg-white/10 hover:text-white"
+                                }`}
+                              >
+                                {item.label}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      )}
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
+              </div>
+
+              {/* Questions & Labs */}
+              <div className="mt-4 border-t border-white/10 pt-3 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-indigo-100/80">
+                Practice
+              </div>
+              <div className="mt-1 space-y-1 text-xs">
+                {supportNav.map(({ href, label, icon: Icon }) => {
+                  const isActive = href !== "#" && pathname === href;
+                  return (
+                    <Link
+                      key={href + label}
+                      href={href}
+                      onClick={() => setOpen(false)}
+                      className={`flex items-center gap-2 rounded-md px-3 py-1.5 text-[0.7rem] font-medium transition-colors ${
+                        isActive
+                          ? "bg-white/10 text-white"
+                          : "text-slate-100/80 hover:bg-white/10 hover:text-white"
+                      }`}
+                    >
+                      <Icon className="h-3.5 w-3.5" />
+                      <span>{label}</span>
+                    </Link>
+                  );
+                })}
               </div>
             </nav>
 
@@ -152,7 +221,7 @@ export default function ContentLayout({ children }) {
             </p>
           </div>
 
-          <nav className="flex-1 space-y-3 overflow-y-auto pr-1 text-sm">
+          <nav className="custom-scrollbar flex-1 space-y-3 overflow-y-auto pr-1 text-sm">
             {/* Top-level pages */}
             <div className="space-y-1">
               {navItems.map(({ href, label, icon: Icon }) => {
@@ -179,24 +248,69 @@ export default function ContentLayout({ children }) {
               Chapters
             </div>
             <div className="space-y-2 text-xs">
-              {chapterNav.map((chapter) => (
-                <div key={chapter.title}>
-                  <p className="px-3 py-1 text-[0.72rem] font-semibold text-indigo-100/90">
-                    {chapter.title}
-                  </p>
-                  <div className="mt-0.5 space-y-0.5">
-                    {chapter.items.map((item) => (
-                      <Link
-                        key={chapter.title + item.label}
-                        href={item.href}
-                        className="block truncate px-5 py-1 text-[0.7rem] text-slate-100/80 hover:bg-white/10 hover:text-white"
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
+              {chapterNav.map((chapter) => {
+                const isOpen = openChapters[chapter.title];
+                return (
+                  <div key={chapter.title}>
+                    <button
+                      type="button"
+                      onClick={() => toggleChapter(chapter.title)}
+                      className="flex w-full items-center justify-between px-3 py-1 text-left text-[0.72rem] font-semibold text-indigo-100/90 hover:bg-white/10"
+                    >
+                      <span>{chapter.title}</span>
+                      {isOpen ? (
+                        <FaChevronDown className="h-3 w-3" />
+                      ) : (
+                        <FaChevronRight className="h-3 w-3" />
+                      )}
+                    </button>
+                    {isOpen && (
+                      <div className="mt-0.5 space-y-0.5">
+                        {chapter.items.map((item) => {
+                          const isActive = pathname === item.href;
+                          return (
+                            <Link
+                              key={chapter.title + item.label}
+                              href={item.href}
+                              className={`block truncate px-5 py-1 text-[0.7rem] transition-colors ${
+                                isActive
+                                  ? "bg-white/10 text-white"
+                                  : "text-slate-100/80 hover:bg-white/10 hover:text-white"
+                              }`}
+                            >
+                              {item.label}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    )}
                   </div>
-                </div>
-              ))}
+                );
+              })}
+            </div>
+
+            {/* Questions & Labs */}
+            <div className="border-t border-white/10 pt-3 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-indigo-100/80">
+              Practice
+            </div>
+            <div className="space-y-1 text-xs">
+              {supportNav.map(({ href, label, icon: Icon }) => {
+                const isActive = href !== "#" && pathname === href;
+                return (
+                  <Link
+                    key={href + label}
+                    href={href}
+                    className={`flex items-center gap-2 rounded-md px-3 py-1.5 text-[0.72rem] font-medium transition-colors ${
+                      isActive
+                        ? "bg-white/10 text-white"
+                        : "text-slate-100/80 hover:bg-white/10 hover:text-white"
+                    }`}
+                  >
+                    <Icon className="h-3.5 w-3.5" />
+                    <span>{label}</span>
+                  </Link>
+                );
+              })}
             </div>
           </nav>
 
