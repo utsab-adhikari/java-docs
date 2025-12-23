@@ -2,7 +2,7 @@ import './globals.css'
 import "@/styles/textbook.css";
 
 export const metadata = {
-  title: 'Advanced Programming with Java - Course Notes',
+  title: 'Advanced Programming with Java - Documentation',
   description: 'Comprehensive course notes for Advanced Java Programming (PU)',
 }
 

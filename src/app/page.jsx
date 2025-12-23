@@ -77,7 +77,7 @@ export default function HomePage() {
           <div className="textbook-actions">
             <a href="/getting-started" className="action-btn primary-action">
               <FaArrowRight />
-              Proceed to Chapter 1
+              Proceed to Getting Started
             </a>
           </div>
 
