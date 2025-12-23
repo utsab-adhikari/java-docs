@@ -44,7 +44,7 @@ export default function ClassPathsPage() {
         <p className="text-slate-700">
           In Java development, environment variables act as mediators between
           you, the compiler, and the operating system. Understanding the
-          difference between <strong>PATH</strong> and <strong>CLASSPATH</strong>
+          difference between <strong>PATH</strong> and <strong>CLASSPATH </strong> 
           helps you control how programs are compiled and executed.
         </p>
         <div className="space-y-4">
@@ -54,14 +54,14 @@ export default function ClassPathsPage() {
               Tells the operating system where to find executable programs like
               <code className="mx-1 text-xs">javac</code> and
               <code className="mx-1 text-xs">java</code>. It points to the
-              <strong>bin directory</strong> of your JDK/JRE.
+              <strong> bin directory</strong> of your JDK/JRE.
             </p>
           </div>
           <div className="rounded border border-slate-200 bg-slate-50 p-4">
             <h3 className="mb-1 font-semibold text-indigo-900">CLASSPATH</h3>
             <p className="text-sm text-slate-700">
               Tells the Java compiler and JVM where to look for
-              <strong>user-defined classes and libraries</strong> referenced in
+              <strong> user-defined classes and libraries</strong> referenced in
               your source code.
             </p>
           </div>
@@ -78,16 +78,16 @@ export default function ClassPathsPage() {
             <h3 className="font-semibold text-slate-800">Command Prompt / Terminal</h3>
             <p className="text-sm text-slate-700">
               To compile and run Java programs from a plain terminal, the
-              system must know where <code className="text-xs">javac</code> and
+              system must know where <code className="text-xs">javac</code> and 
               <code className="ml-1 text-xs">java</code> live. This is why
-              <strong>PATH (and sometimes CLASSPATH)</strong> need to be
+              <strong> PATH (and sometimes CLASSPATH)</strong> need to be
               configured.
             </p>
           </div>
           <div className="border-l-4 border-indigo-400 bg-indigo-50 p-4 text-indigo-900">
             <h3 className="font-semibold">Inside IDEs</h3>
             <p className="text-sm">
-              IDEs like Eclipse or IntelliJ usually manage PATH and CLASSPATH
+              IDEs like Eclipse or IntelliJ usually manage PATH and CLASSPATH 
               internally. You typically do not need to set these variables
               manually when compiling and running from an IDE.
             </p>
