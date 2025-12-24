@@ -41,7 +41,7 @@ const chapterNav = [
       { href: "/chapter-01/architecture", label: "1.2 Architecture" },
       { href: "/chapter-01/class-paths", label: "1.3 Class Paths" },
       { href: "/chapter-01/class-object", label: "1.4 Class & Object" },
-      { href: "/chapter-01/constructor", label: "1.5 Constructor" },
+      { href: "/chapter-01/constructors", label: "1.5 Constructors" },
     ],
   },
   {
@@ -75,8 +75,8 @@ export default function ContentLayout({ children }) {
   };
 
   return (
-    <div className="min-h-screen bg-[#f4f1ea]">
-      <header className="sticky top-0 z-40 flex items-center justify-between px-4 py-3 bg-[#1a3c8b] text-white shadow lg:hidden">
+    <div className="min-h-screen w-full bg-[#f4f1ea]">
+      <header className="sticky top-0 z-40 flex w-full items-center justify-between px-4 py-3 bg-[#1a3c8b] text-white shadow lg:hidden">
         <button
           onClick={() => setOpen(true)}
           aria-label="Open main navigation"
