@@ -34,11 +34,27 @@ export default function HomePage() {
           </div>
 
           <div className="cover-author">
-            <div className="author-line" />
-            <h3 className="author-name">Utsab Adhikari</h3>
-            <p className="author-cred">
-              Bachelor of Engineering in Information Technology (BEIT)
-            </p>
+
+            <div className="flex flex-col gap-2 text-sm text-slate-100 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-col sm:items-center sm:gap-2">
+                <span className="font-semibold uppercase text-slate-200">
+                  Prepared by: <br/>
+                </span>
+                <span className="font-medium">
+                  Utsab Adhikari
+                  <span className="ml-1 text-xs font-normal text-slate-200">
+                    (BEIT Undergraduate)
+                  </span>
+                </span>
+              </div>
+
+              <div className="flex flex-col sm:items-center sm:gap-2">
+                <span className="font-semibold uppercase text-slate-200">
+                  Reviewed by:
+                </span>
+                <span className="font-medium text-slate-200">Pending</span>
+              </div>
+            </div>
           </div>
 
           <footer className="cover-footer">
@@ -73,8 +89,13 @@ export default function HomePage() {
             </ul>
           </section>
 
+          {/* META / LAST UPDATED */}
+          <div className="mt-6 text-xs text-slate-500 sm:text-sm border border-indigo-100 bg-indigo-50 px-4 py-2 text-indigo-900 shadow-sm">
+            Last updated: December 24, 2025
+          </div>
+
           {/* CTA */}
-          <div className="textbook-actions">
+          <div className="textbook-actions mt-3">
             <a href="/getting-started" className="action-btn primary-action">
               <FaArrowRight />
               Proceed to Getting Started
