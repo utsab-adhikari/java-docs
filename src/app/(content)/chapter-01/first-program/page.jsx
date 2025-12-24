@@ -78,7 +78,7 @@ export default function FirstProgramPage() {
 							{copied === "program" ? "Copied" : "Copy"}
 						</button>
 					</div>
-					<pre className="overflow-x-auto bg-transparent px-4 py-3">
+					<pre className="overflow-x-auto max-w-[80vw] bg-transparent px-4 py-3">
 						<code>{PROGRAM_CODE}</code>
 					</pre>
 				</div>

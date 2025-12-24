@@ -143,7 +143,7 @@ export default function ClassObjectPage() {
               {copied === "simple" ? "Copied" : "Copy"}
             </button>
           </div>
-          <pre className="overflow-x-auto bg-transparent px-4 py-3">
+          <pre className="overflow-x-auto max-w-[80vw] bg-transparent px-4 py-3">
             <code>{SIMPLE_CLASS_CODE}</code>
           </pre>
         </div>
@@ -189,7 +189,7 @@ export default function ClassObjectPage() {
               {copied === "encapsulation" ? "Copied" : "Copy"}
             </button>
           </div>
-          <pre className="overflow-x-auto bg-transparent px-4 py-3">
+          <pre className="overflow-x-auto max-w-[80vw] bg-transparent px-4 py-3">
             <code>{ENCAPSULATION_CODE}</code>
           </pre>
         </div>
@@ -249,10 +249,10 @@ Roll: 11`}</code>
           <span>Previous: 1.3 Class Paths</span>
         </Link>
         <Link
-          href="/chapter-01/constructor"
+          href="/chapter-01/constructors"
           className="inline-flex items-center gap-2 bg-[#1a3c8b] px-4 py-2 text-sm font-medium text-white shadow-md"
         >
-          <span>Next: 1.5 Constructor</span>
+          <span>Next: 1.5 Constructors</span>
           <span className="text-lg">→</span>
         </Link>
       </div>
