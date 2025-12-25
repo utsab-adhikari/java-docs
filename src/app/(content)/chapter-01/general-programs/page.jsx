@@ -381,7 +381,7 @@ public class Fibonacci {
           <span>Previous: 1.5 Constructors</span>
         </Link>
           <Link
-                  href="/chapter-01/constructors-programs"
+                  href="/chapter-01/class-and-objects-programs"
                   className="inline-flex items-center gap-2 bg-[#1a3c8b] px-4 py-2 text-sm font-medium text-white shadow-md"
                 >
                   <span>Next: Programs - Class and Objects</span>
