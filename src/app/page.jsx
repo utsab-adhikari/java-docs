@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import {
   FaGithub,
   FaLinkedin,
@@ -10,11 +11,47 @@ import {
 } from "react-icons/fa";
 
 export default function HomePage() {
+  const [lastUpdated, setLastUpdated] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function fetchLastUpdated() {
+      try {
+        const res = await fetch("/api/last-updated", {
+          cache: "no-store",
+        });
+
+        if (!res.ok) {
+          throw new Error("Failed to load last updated info");
+        }
+
+        const data = await res.json();
+        setLastUpdated({
+          date: data.date ?? null,
+          message: data.message ?? null,
+        });
+      } catch (err) {
+        setError(err?.message ?? "Unable to fetch last updated info");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchLastUpdated();
+  }, []);
+
+  const formattedDate = lastUpdated?.date
+    ? new Date(lastUpdated.date).toLocaleDateString("en-GB", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    : null;
+
   return (
     <main className="textbook-container">
       <div className="textbook-page">
-
-        {/* COVER PAGE */}
         <section className="cover-front">
           <div className="cover-title-block">
             <h1 className="cover-main-title">ADVANCED PROGRAMMING</h1>
@@ -62,10 +99,8 @@ export default function HomePage() {
           </footer>
         </section>
 
-        {/* CONTENT */}
         <section className="textbook-content">
 
-          {/* PREFACE */}
           <section className="chapter-section">
             <h2 className="section-heading">Preface</h2>
             <p>
@@ -77,7 +112,6 @@ export default function HomePage() {
             </p>
           </section>
 
-          {/* STRUCTURE */}
           <section className="chapter-section">
             <h2 className="section-heading">Organization of the Material</h2>
 
@@ -89,12 +123,25 @@ export default function HomePage() {
             </ul>
           </section>
 
-          {/* META / LAST UPDATED */}
-          <div className="mt-6 text-xs text-slate-500 sm:text-sm border border-indigo-100 bg-indigo-50 px-4 py-2 text-indigo-900 shadow-sm">
-            Last updated: December 24, 2025
+          <div className="mt-6 text-sm text-slate-500 sm:text-sm border border-indigo-100 bg-indigo-50 px-4 py-2 text-indigo-900 shadow-sm">
+            {loading && <span>Fetching latest updates...</span>}
+            {!loading && error && <span>Last updated information unavailable.</span>}
+            {!loading && !error && (
+              <div className="space-y-0.5">
+                <p>
+                  <span className="font-semibold">Last updated:</span>{" "}
+                  {formattedDate ?? "Recently"}
+                </p>
+                {lastUpdated?.message && (
+                  <p className="text-[11px] sm:text-xs text-slate-600 line-clamp-2">
+                    <span className="font-medium">Latest change:</span>{" "}
+                    {lastUpdated.message}
+                  </p>
+                )}
+              </div>
+            )}
           </div>
 
-          {/* CTA */}
           <div className="textbook-actions mt-3">
             <a href="/getting-started" className="action-btn primary-action">
               <FaArrowRight />
@@ -102,7 +149,6 @@ export default function HomePage() {
             </a>
           </div>
 
-          {/* AUTHOR */}
           <section className="author-section">
             <h2 className="author-section-title">About the Author</h2>
 
@@ -129,7 +175,6 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* FOOTER */}
           <footer className="running-footer">
             Academic Reference · Not for Commercial Distribution
           </footer>
