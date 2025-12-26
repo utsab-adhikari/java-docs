@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "java-documentation-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -24,5 +24,8 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.10",
     "tailwindcss": "^4"
-  }
+  },
+  "description": "A comprehensive documentation website for Java programming language.",
+  "keywords": ["Java, documentation, programming, website, development, coding, tutorials, guides"],
+  "author": "Utsab Adhikari"
 }
