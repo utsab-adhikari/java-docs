@@ -200,7 +200,8 @@ Car car1 = new Car("Creta", "Red");`}
           constructors in a single <code>car</code> class and demonstrates how
           each one is called from <code>main</code>.
         </p>
-       <JavaCode CODE=            {`class car {
+        <JavaCode
+          CODE={`class car {
     private String model;
     private String color;
     private int model_no;
@@ -241,22 +242,24 @@ public class Constructor {
         car2.showInfo();
         car3.showInfo();
     }
-}`} filename={"Constructor.java"} />
-<div className="flex items-center justify-between text-xs text-slate-600">
-            <span>Reference &amp; full code</span>
-            <Link
-              href="https://github.com/utsab-adhikari/java/blob/main/Constructors/P03_ConstructorOverloading.java"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 rounded-md border border-slate-200 bg-white px-3 py-1 font-medium text-slate-700 shadow-sm hover:bg-slate-50"
-            >
-              <FaGithub className="h-3.5 w-3.5" />
-              <span>View on GitHub</span>
-            </Link>
-          </div>
+}`}
+          filename={"Constructor.java"}
+        />
+        <div className="flex items-center justify-between text-xs text-slate-600">
+          <span>Reference &amp; full code</span>
+          <Link
+            href="https://github.com/utsab-adhikari/java/blob/main/Constructors/P03_ConstructorOverloading.java"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 rounded-md border border-slate-200 bg-white px-3 py-1 font-medium text-slate-700 shadow-sm hover:bg-slate-50"
+          >
+            <FaGithub className="h-3.5 w-3.5" />
+            <span>View on GitHub</span>
+          </Link>
+        </div>
       </section>
 
-        <section className="space-y-3">
+      <section className="space-y-3">
         <h2 className="border-l-4 border-amber-400 pl-3 text-xl font-semibold text-indigo-900">
           Output
         </h2>
@@ -287,11 +290,11 @@ Model No: 10
           <span className="text-lg">←</span>
           <span>Previous: 1.4 Class &amp; Object</span>
         </Link>
-         <Link
-          href="/chapter-01/general-programs"
+        <Link
+          href="/chapter-01/exception-handling"
           className="inline-flex items-center gap-2 bg-[#1a3c8b] px-4 py-2 text-sm font-medium text-white shadow-md"
         >
-          <span>Next: General Programs</span>
+          <span>Next: Exception Handling</span>
           <span className="text-lg">→</span>
         </Link>
       </div>

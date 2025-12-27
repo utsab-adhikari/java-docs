@@ -374,11 +374,11 @@ public class Fibonacci {
 
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 pt-6">
         <Link
-          href="/chapter-01/constructors"
+          href="/chapter-01/exception-handling"
           className="inline-flex items-center gap-2 border border-indigo-100 bg-indigo-50 px-4 py-2 text-sm font-medium text-indigo-900 shadow-sm"
         >
           <span className="text-lg">←</span>
-          <span>Previous: 1.5 Constructors</span>
+          <span>Previous: 1.6 Exception Handling</span>
         </Link>
           <Link
                   href="/chapter-01/class-and-objects-programs"
