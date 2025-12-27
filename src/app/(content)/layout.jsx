@@ -42,6 +42,7 @@ const chapterNav = [
       { href: "/chapter-01/class-paths", label: "1.3 Class Paths" },
       { href: "/chapter-01/class-object", label: "1.4 Class & Object" },
       { href: "/chapter-01/constructors", label: "1.5 Constructors" },
+      { href: "/chapter-01/exception-handling", label: "1.6 Exception Handling" },
       { href: "/chapter-01/general-programs", label: "General Programs" },
       { href: "/chapter-01/class-and-objects-programs", label: "Class and Objects Programs" },
     ],
