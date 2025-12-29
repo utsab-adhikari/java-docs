@@ -38,7 +38,6 @@ export default function Chapter02OverviewPage() {
         </p>
       </header>
 
-      {/* OOP pillars diagram */}
       <figure className="space-y-2">
         <div className="border border-slate-200 bg-slate-50 p-2">
           <Image
@@ -55,7 +54,6 @@ export default function Chapter02OverviewPage() {
         </figcaption>
       </figure>
 
-      {/* Introduction */}
       <section className="space-y-3">
         <h2 className="border-l-4 border-amber-400 pl-3 text-xl font-semibold text-indigo-900">
           Why Object-Oriented Principles Matter
@@ -73,7 +71,6 @@ export default function Chapter02OverviewPage() {
         </p>
       </section>
 
-      {/* Inheritance */}
       <section className="space-y-3">
         <h2 className="border-l-4 border-amber-400 pl-3 text-xl font-semibold text-indigo-900">
           Inheritance
@@ -90,7 +87,6 @@ export default function Chapter02OverviewPage() {
         </ul>
       </section>
 
-      {/* Polymorphism */}
       <section className="space-y-3">
         <h2 className="border-l-4 border-amber-400 pl-3 text-xl font-semibold text-indigo-900">
           Polymorphism
@@ -111,7 +107,6 @@ export default function Chapter02OverviewPage() {
         </ul>
       </section>
 
-      {/* Abstraction */}
       <section className="space-y-3">
         <h2 className="border-l-4 border-amber-400 pl-3 text-xl font-semibold text-indigo-900">
           Abstraction
@@ -127,8 +122,6 @@ export default function Chapter02OverviewPage() {
           <li>Supports plug-and-play implementations via interfaces.</li>
         </ul>
       </section>
-
-      {/* Encapsulation */}
       <section className="space-y-3">
         <h2 className="border-l-4 border-amber-400 pl-3 text-xl font-semibold text-indigo-900">
           Encapsulation
@@ -145,7 +138,6 @@ export default function Chapter02OverviewPage() {
         </ul>
       </section>
 
-      {/* Navigation */}
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 pt-6">
         <Link
             href="/chapter-02"
