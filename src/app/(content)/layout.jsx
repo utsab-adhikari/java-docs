@@ -54,7 +54,7 @@ const chapterNav = [
       { href: "/chapter-02/principles", label: "2.1 Principles" },
       { href: "/chapter-02/super-sub-class", label: "2.2 Super class & Sub class" },
       { href: "/chapter-02/inheritance-types", label: "2.3 Inheritance Types" },
-      { href: "/chapter-02/overriding-overloading", label: "2.4 Overriding / Overloading" },
+      { href: "/chapter-02/extends-super", label: "2.4 Extends & Super Keywords" },
     ],
   },
 ];
@@ -78,7 +78,7 @@ export default function ContentLayout({ children }) {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#f4f1ea]">
+    <div className="min-h-screen min-w-full bg-[#f4f1ea]">
       <header className="sticky top-0 z-40 flex w-full items-center justify-between px-4 py-3 bg-[#1a3c8b] text-white shadow lg:hidden">
         <button
           onClick={() => setOpen(true)}
