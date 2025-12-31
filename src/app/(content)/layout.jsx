@@ -27,6 +27,11 @@ const navItems = [
   },
 ];
 
+const guiNav = [
+	{ href: "/GUI", label: "GUI Overview" },
+	{ href: "/GUI/questions", label: "GUI Questions"},
+];
+
 const supportNav = [
   { href: "/questions", label: "Questions", icon: FaQuestionCircle },
   { href: "/lab-questions", label: "Lab Questions", icon: FaFlask },
@@ -57,6 +62,22 @@ const chapterNav = [
       { href: "/chapter-02/extends-super", label: "2.4 Extends & Super Keywords" },
     ],
   },
+   {
+    title: "3. Chapter 03: GUI",
+    items: [
+      { href: "/chapter-03", label: "Overview" },
+      { href: "/chapter-03/awt-swing", label: "3.1 Introduction to AWT and Swing" },
+      { href: "/chapter-03/layout-management", label: "3.2 Layout Management" },
+      { href: "/chapter-03/gui-controls", label: "3.3 GUI Controls" },
+      { href: "/chapter-03/menus-tooltips", label: "3.4 Menu Elements and Tooltips" },
+      { href: "/chapter-03/dialogs-frames", label: "3.5 Dialogs and Frames" },
+      { href: "/chapter-03/event-handling", label: "3.6 Event Handling and Listener Interfaces" },
+      { href: "/chapter-03/action-events", label: "3.7 Action Events" },
+      { href: "/chapter-03/swing-vs-javafx", label: "3.8 Swing vs JavaFX Comparison" },
+      { href: "/chapter-03/javafx-layouts", label: "3.9 JavaFX Layouts" },
+      { href: "/chapter-03/javafx-ui-controls", label: "3.10 JavaFX UI Controls" },
+    ],
+  },
 ];
 
 export default function ContentLayout({ children }) {
@@ -64,7 +85,7 @@ export default function ContentLayout({ children }) {
   const [openChapters, setOpenChapters] = useState(() => {
     const initialState = {};
     chapterNav.forEach((chapter) => {
-      initialState[chapter.title] = true;
+      initialState[chapter.title] = false;
     });
     return initialState;
   });
@@ -132,7 +153,6 @@ export default function ContentLayout({ children }) {
                   </Link>
                 );
               })}
-
               {/* Chapters */}
               <div className="mt-4 border-t border-white/10 pt-3 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-indigo-100/80">
                 Chapters
@@ -179,6 +199,30 @@ export default function ContentLayout({ children }) {
                   );
                 })}
               </div>
+
+        {/* GUI Docs */}
+        <div className="mt-4 border-t border-white/10 pt-3 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-indigo-100/80">
+          GUI Docs
+        </div>
+        <div className="mt-1 space-y-1 text-xs">
+          {guiNav.map(({ href, label, icon: Icon }) => {
+            const isActive = href !== "#" && pathname === href;
+            return (
+              <Link
+                key={href + label}
+                href={href}
+                onClick={() => setOpen(false)}
+                className={`flex items-center gap-2 rounded-md px-3 py-1.5 text-[0.7rem] font-medium transition-colors ${
+                  isActive
+                    ? "bg-white/10 text-white"
+                    : "text-slate-100/80 hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                <span>{label}</span>
+              </Link>
+            );
+          })}
+        </div>
 
               {/* Questions & Labs */}
               <div className="mt-4 border-t border-white/10 pt-3 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-indigo-100/80">
@@ -291,6 +335,29 @@ export default function ContentLayout({ children }) {
                 );
               })}
             </div>
+
+            {/* GUI Section */}
+        <div className="border-t border-white/10 pt-3 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-indigo-100/80">
+          GUI Docs
+        </div>
+        <div className="space-y-1 text-xs">
+          {guiNav.map(({ href, label, icon: Icon }) => {
+            const isActive = href !== "#" && pathname === href;
+            return (
+              <Link
+                key={href + label}
+                href={href}
+                className={`flex items-center gap-2 rounded-md px-3 py-1.5 text-[0.72rem] font-medium transition-colors ${
+                  isActive
+                    ? "bg-white/10 text-white"
+                    : "text-slate-100/80 hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                <span>{label}</span>
+              </Link>
+            );
+          })}
+        </div>
 
             {/* Questions & Labs */}
             <div className="border-t border-white/10 pt-3 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-indigo-100/80">
