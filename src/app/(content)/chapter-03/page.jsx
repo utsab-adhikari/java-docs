@@ -221,7 +221,7 @@ export default function Chapter03OverviewPage() {
 						<span>Previous: Chapter 02 Overview</span>
 					</Link>
 				<Link
-						href="/chapter-03/awt-swing-intro"
+						href="/chapter-03/awt-swing"
 						className="inline-flex items-center gap-2 bg-[#1a3c8b] px-4 py-2 text-sm font-medium text-white shadow-md"
 					>
 						<span>Next: 3.1 AWT and Swing</span>
