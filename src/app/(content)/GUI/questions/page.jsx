@@ -53,10 +53,9 @@ export default function GUIQuestionsPage() {
 						href="/GUI/questions/set-01"
 						className="flex items-center justify-between px-4 py-3 text-sm text-slate-800 transition hover:bg-slate-50"
 					>
-						<span>Set 01 &mdash; Components &amp; Layouts (Lab 04)</span>
+						<span>Set 01 &mdash; Components &amp; Layouts (Lab 04) </span>
 						<span className="text-xs font-medium text-slate-500">
-							GridBagLayout form, calculator UI
-						</span>
+							Swing and AWT						</span>
 					</Link>
 				</div>
 			</section>

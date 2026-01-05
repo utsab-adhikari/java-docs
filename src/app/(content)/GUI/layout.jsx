@@ -1,14 +1,15 @@
 export const metadata = {
 	title: {
-		default: "GUI Programming with AWT and Swing",
+		default: "Java GUI Programming",
 		template: "%s · Java Programming Documentation",
 	},
 	description:
-		"Overview of Java GUI programming using AWT and Swing, including core components like JFrame, JPanel, buttons, and layout managers such as FlowLayout, GridLayout, BorderLayout, and GridBagLayout.",
+		"High-level overview of Java GUI programming in Java, focusing on classic Swing & AWT as well as modern JavaFX concepts.",
 	keywords: [
 		"Java GUI programming",
 		"Java AWT tutorial",
 		"Java Swing tutorial",
+		"JavaFX tutorial",
 		"Java JFrame JPanel JButton",
 		"Java radio button checkbox",
 		"Swing components and containers",
@@ -26,18 +27,18 @@ export const metadata = {
 		follow: true,
 	},
 	openGraph: {
-		title: "GUI Programming with AWT and Swing",
+		title: "Java GUI Programming Overview",
 		description:
-			"Learn the basics of Java GUI development using AWT and Swing, including core components and layout managers for building desktop applications.",
+			"Explore Java GUI development paths using AWT/Swing and JavaFX, and choose where to start for labs and exams.",
 		type: "article",
 		locale: "en_US",
 		siteName: "Java Programming Documentation",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "GUI Programming · AWT and Swing",
+		title: "Java GUI Programming Overview",
 		description:
-			"Explore AWT and Swing components and layouts to design graphical user interfaces in Java.",
+			"Overview of Java GUI programming with Swing, AWT, and JavaFX.",
 	},
 	alternates: {
 		canonical: "/GUI",
