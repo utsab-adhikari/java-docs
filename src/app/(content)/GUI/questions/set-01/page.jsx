@@ -607,10 +607,10 @@ public class question06UI {
           <span>Previous: Questions</span>
         </Link>
         <Link
-          href="/GUI/"
+          href="/GUI/questions/set-02"
           className="inline-flex items-center gap-2 bg-[#1a3c8b] px-4 py-2 text-sm font-medium text-white shadow-md hover:bg-[#152e6b]"
         >
-          <span>Next: GUI</span>
+          <span>Next: Set-02</span>
           <span className="text-lg">→</span>
         </Link>
       </div>

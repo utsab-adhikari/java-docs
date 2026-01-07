@@ -58,6 +58,16 @@ export default function GUIQuestionsPage() {
 							Swing and AWT						</span>
 					</Link>
 				</div>
+				<div className="divide-y divide-slate-200 rounded-md border border-slate-200 bg-white">
+					<Link
+						href="/GUI/questions/set-02"
+						className="flex items-center justify-between px-4 py-3 text-sm text-slate-800 transition hover:bg-slate-50"
+					>
+						<span>Set 02 &mdash; JavaFX Components (Lab 05) </span>
+						<span className="text-xs font-medium text-slate-500">
+							JavaFX						</span>
+					</Link>
+				</div>
 			</section>
 
 			<div className="mt-4 flex flex-wrap items-center justify-between gap-3">
