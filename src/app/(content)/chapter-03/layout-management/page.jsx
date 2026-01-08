@@ -71,7 +71,7 @@ f1.setLayout(new FlowLayout(FlowLayout.CENTER, 15, 15));`}
         />
 
         <Link
-          href="/GUI/layouts/flowlayout"
+              href="/GUI/swing-awt/layouts/flowlayout"
           className="inline-flex items-center gap-2 border border-indigo-100 bg-indigo-50 px-4 py-2 text-sm font-medium text-indigo-900 shadow-sm transition hover:bg-indigo-100"
         >
           FlowLayout (Detailed) →
@@ -93,7 +93,7 @@ f1.setLayout(new GridLayout(4, 2, 5, 5));`}
           filename="GridLayoutExample.java"
         />
         <Link
-          href="/GUI/layouts/gridlayout"
+              href="/GUI/swing-awt/layouts/gridlayout"
           className="inline-flex items-center gap-2 border border-indigo-100 bg-indigo-50 px-4 py-2 text-sm font-medium text-indigo-900 shadow-sm transition hover:bg-indigo-100"
         >
           GridLayout (Detailed) →
@@ -117,7 +117,7 @@ f1.add(bt4, BorderLayout.CENTER);`}
           filename="BorderLayoutExample.java"
         />
         <Link
-          href="/GUI/layouts/borderlayout"
+              href="/GUI/swing-awt/layouts/borderlayout"
           className="inline-flex items-center gap-2 border border-indigo-100 bg-indigo-50 px-4 py-2 text-sm font-medium text-indigo-900 shadow-sm transition hover:bg-indigo-100"
         >
           BorderLayout (Detailed) →
@@ -149,7 +149,7 @@ f1.add(bt4, BorderLayout.CENTER);`}
           </li>
         </ul>
         <Link
-          href="/GUI/layouts/gridbaglayout"
+              href="/GUI/swing-awt/layouts/gridbaglayout"
           className="inline-flex items-center gap-2 border border-indigo-100 bg-indigo-50 px-4 py-2 text-sm font-medium text-indigo-900 shadow-sm transition hover:bg-indigo-100"
         >
           GridBagLayout (Detailed) →
@@ -165,7 +165,7 @@ f1.add(bt4, BorderLayout.CENTER);`}
 
       <div className="mt-6 flex justify-center">
         <Link
-          href="/GUI/layouts"
+              href="/GUI/swing-awt/layouts"
           className="inline-flex items-center gap-2 bg-[#1a3c8b] px-4 py-2 text-sm font-medium text-white shadow-md transition hover:bg-[#152e6b]"
         >
           Learn Layouts (Detailed)
